@@ -1,0 +1,160 @@
+.Carousel-Home {
+    &__container {
+        &__carousel {
+            height: 85vh;
+            background-color: black;
+        }
+    }
+}
+
+.carouselBox {
+    position: relative;
+    height: 100%;
+    width: 100% !important;
+
+    img {
+        max-height: 85vh;
+        min-height: 85vh;
+        width: 100%;
+        opacity: .7;
+    }
+
+    &__content {
+        color: white;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 0 4rem;
+
+        h1 {
+            font-size: 45px;
+            text-shadow: 0 0 10px grey;
+            line-height: 1.8rem;
+        }
+
+        p {
+            margin: 1rem 0;
+            font-size: 30px;
+            text-shadow: 0 0 10px grey;
+            letter-spacing: -0.10rem;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: $color-blue;
+            border: none;
+            outline: none;
+            font-weight: 600;
+            padding: .8rem 1.3rem;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+            margin-top: 1rem;
+        }
+    }
+}
+
+
+.slick-next {
+    right: 3%;
+}
+
+.slick-next,
+.slick-prev {
+    top: 60%;
+    z-index: 100;
+    border: 2px solid white;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    transition: .4s all ease-in;
+
+    &:hover {
+        background: black;
+        border-color: black;
+        opacity: .5;
+
+    }
+}
+
+.slick-prev {
+    left: 3%;
+    z-index: 100;
+
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 30px;
+    filter: drop-shadow(0px 0px 10px white);
+    color: black;
+}
+
+
+
+@media screen and (max-width:1050px) {
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 20px;
+    }
+
+    .slick-next,
+    .slick-prev {
+        width: 2rem;
+        height: 2rem;
+    }
+
+}
+
+@media screen and (max-width:950px) {
+    .carouselBox {
+        &__content {
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:750px) {
+    .slick-prev {
+        left: .5%;
+    }
+
+    .slick-next {
+        right: .5%;
+    }
+
+    .carouselBox {
+        &__content {
+            padding: 0 3rem;
+
+            h1 {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            a {
+                padding: .4rem 1rem;
+            }
+        }
+    }
+}
+@media screen and (max-width:600px) {
+    .carouselBox__content p{
+        display: none;
+    }
+}

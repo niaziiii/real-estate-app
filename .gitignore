@@ -5,10 +5,7 @@
 /.pnp
 .pnp.js
 
-/src/components/Carousel
-/src/assests
-/src/constrains/home
-/src/style/modules/_carousel.scss
+
 
 
 # testing
