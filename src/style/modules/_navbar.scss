@@ -1,0 +1,159 @@
+.Navigation {
+    padding: .5rem 3rem;
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 1000;
+    &__container {
+        display: flex;
+    }
+
+    &__logo {
+        margin: 0rem 4rem 0 0;
+        color: white;
+        h1 {
+            font-weight: 900;
+            font-size: 3rem;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        ul {
+            width: 90% ;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            li {
+                list-style: none;
+
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    color: white;
+                    text-decoration: none;
+                    font-size: 1rem;
+
+                    svg {
+                        font-size: 1.5rem;
+                        margin-right: .3rem;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.Special-navbar {
+    padding-top: 1rem;
+    align-items: flex-start !important;
+    li {
+        a {
+            font-size: 1.5rem !important;
+            text-transform: capitalize !important;
+            padding:  0 .5rem;
+            p {
+                text-transform: uppercase !important;
+                font-weight: 700;
+                transition: 0.3s all cubic-bezier(0.42, 0, 1, -0.52);
+                &:hover{ border-bottom: 3px solid white;}
+            }
+            
+        }
+    }
+}
+
+.hamBurgerToggle{
+    display: none;
+    margin-left: 2rem;
+    border: none;
+    padding: 0%;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1200px) {
+    .Navigation {
+        &__content {
+            ul {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .Special-navbar {
+        li {
+            a {
+                font-size: 1.2rem !important;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:1020px) {
+    .Navigation{
+        &__content{
+            flex: 0;
+            margin: 0%;
+            margin-left: auto !important;
+        }
+    }
+    .hamBurgerToggle{
+        display: inline;
+    }
+    .main-nav-row{
+        li {
+            margin-left: 2rem;
+            a {
+                p{ display: none;}
+                svg{font-size: 1.75rem !important;}
+            }
+        }
+    }
+    .Special-navbar{
+        display: none !important;
+    }
+}
+
+@media screen and (max-width:750px) {
+.Navigation{
+    padding: .5rem 1rem;
+}
+.main-nav-row{
+    li{
+        margin-left: 1rem;
+    }
+}
+}
+
+
+
+@media screen and (max-width:600px) {
+    .Navigation__logo{
+        margin: 0%;
+       h1{
+        font-size: 2rem;
+       }
+    }
+    .Navigation{
+        padding: .5rem 1rem;
+    }
+    .main-nav-row{
+        li{
+        display: none;
+        }
+    }
+    }
