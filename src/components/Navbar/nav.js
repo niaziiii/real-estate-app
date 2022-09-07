@@ -1,72 +1,130 @@
 import { FiPhoneCall } from 'react-icons/fi'
 import { AiOutlineMail } from 'react-icons/ai'
-import  {GoChecklist} from 'react-icons/go'
-import  {BiSearch} from 'react-icons/bi'
-
+import { GoChecklist } from 'react-icons/go'
+import { BiSearch } from 'react-icons/bi'
+import React from 'react'
 const navObj = {
-    main:[
+    main: [
+
         {
-        text:'+923083909131',
-        ref:'/',
-        icon: <FiPhoneCall/>
-    },
-    {
-        text:'muhabatkhan03@gmail.com',
-        ref:'/',
-        icon: <AiOutlineMail/>
-    },
-    {
-        text:'List Your Property',
-        ref:'/',
-        icon: <GoChecklist/>
-    },
-    {
-        text:'Search',
-        ref:'/',
-        icon: <BiSearch/>
-    }
-],
-    ordainay:[
-        {
-            text:'Buy',
-            ref:'/'
+            text: '+923083909131',
+            ref: '/',
+            icon: <FiPhoneCall />
         },
         {
-            text:'Rent',
-            ref:'/'
+            text: 'muhabatkhan03@gmail.com',
+            ref: '/',
+            icon: <AiOutlineMail />
         },
         {
-            text:'Sell',
-            ref:'/'
+            text: 'List Your Property',
+            ref: '/',
+            icon: <GoChecklist />
         },
         {
-            text:'Service',
-            ref:'/'
+            text: 'Search',
+            ref: '/',
+            icon: <BiSearch />
+        }
+    ],
+    ordainay: [
+        {
+            isOpen: false,
+            toggle: true,
+            text: 'Buy',
+            ref: '/',
+            links : [
+                {
+                    ref : '/#dd',
+                    text : 'Ready Properties'
+                },{
+                    ref : '/#ff',
+                    text : 'Off-Plan'
+                }
+            ]
         },
         {
-            text:'About us',
-            ref:'/'
+            text: 'Rent',
+            ref: '/'
         },
         {
-            text:'Contact us',
-            ref:'/'
+            isOpen: false,
+            toggle: true,
+            text: 'Sell',
+            ref: '/',
+            links : [
+                {
+                    ref : '/#dd',
+                    text : 'List Your Property'
+                },{
+                    ref : '/#dd',
+                    text : 'Book A Valuation'
+                }
+            ]
+        },
+        {
+            text: 'Service',
+            ref: '/'
+        },
+        {
+            text: 'About us',
+            ref: '/'
+        },
+        {
+            text: 'Contact us',
+            ref: '/'
         }
     ]
 }
 
 
 const genLists = (obj) => {
-    return(
+    return (
         <li key={obj.text}>
-        <a href={obj.ref}>
-            {obj.icon? obj.icon : ''}
-            <p>{obj.text}</p>
-        </a>
-    </li>
+            <a href='#go'>
+                {obj.icon ? obj.icon : ''}
+                <p>{obj.text}</p>
+            </a>
+        </li>
     )
+}
+const MobGenLists = ({ obj, i }) => {
+    const [openAccordion, setOpenAccordion] = React.useState(obj.isOpen)
+    if (obj.toggle) {
+        return (
+            <li onClick={()=>{
+                setOpenAccordion(!openAccordion)
+                console.log(openAccordion);
+            }}>
+                <a href='#go'>
+                    <p>{obj.text}</p>
+                    {
+                        obj.toggle ? <i>🔽</i> : ""
+                    }
+                </a>
+                {
+                    openAccordion? 
+                    <div>
+                        {obj.links.map(el => <a href={el.ref} key={el.text} >{el.text} </a>)}
+                    </div>
+                    : ''
+                }
+            </li>
+        )
+    } else {
+        return (
+            <li >
+                <a href='#go'>
+                    <p>{obj.text}</p>
+                </a>
+            </li>
+        )
+    }
+
 }
 
 export {
     navObj,
-    genLists
+    genLists,
+    MobGenLists
 }
