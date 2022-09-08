@@ -2,7 +2,9 @@ import { FiPhoneCall } from 'react-icons/fi'
 import { AiOutlineMail } from 'react-icons/ai'
 import { GoChecklist } from 'react-icons/go'
 import { BiSearch } from 'react-icons/bi'
+import { VscChevronDown ,VscChevronUp} from "react-icons/vsc";
 import React from 'react'
+
 const navObj = {
     main: [
 
@@ -99,7 +101,7 @@ const MobGenLists = ({ obj, i }) => {
                 <a href='#go'>
                     <p>{obj.text}</p>
                     {
-                        obj.toggle ? <i>🔽</i> : ""
+                        openAccordion ?  <VscChevronUp/>:<VscChevronDown/> 
                     }
                 </a>
                 {
