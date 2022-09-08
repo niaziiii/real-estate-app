@@ -127,6 +127,13 @@ body {
   }
 }
 @media screen and (max-width: 950px) {
+  .Carousel-Home__container__carousel {
+    height: 75vh;
+  }
+  .carouselBox img {
+    max-height: 75vh;
+    min-height: 75vh;
+  }
   .carouselBox__content h1 {
     font-size: 30px;
   }
@@ -345,5 +352,64 @@ body {
   }
   .main-nav-row li {
     display: none;
+  }
+}
+.app__Search {
+  background-color: #ececec;
+  min-height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app__Serach__container {
+  display: flex;
+  justify-content: center;
+}
+.app__Serach__container form {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.app__Serach__container form select {
+  background-color: white;
+  width: 7rem;
+  padding: 0.5rem 0;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+.app__Serach__container form select option {
+  padding: 0.3rem 0.8rem;
+}
+.app__Serach__container form select:hover, .app__Serach__container form select :visited, .app__Serach__container form select :focus {
+  border: 1px solid gray;
+}
+.app__Serach__container form input[type=submit] {
+  border-radius: 10px;
+  background-color: #1480bd;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1.4rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media screen and (max-width: 950px) {
+  .app__Search {
+    height: 25vh;
+  }
+  .app__Serach__container form {
+    padding: 0 0.5rem;
+  }
+  .app__Serach__container form select {
+    background-color: white;
+    width: 6rem;
+    padding: 0.3rem 0;
   }
 }/*# sourceMappingURL=style.css.map */
