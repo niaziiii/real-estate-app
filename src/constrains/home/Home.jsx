@@ -7,7 +7,14 @@ function Home() {
       <Carousel/>
       <SearchProduct/>
       <HomePageProducts
-      arr={[1,2,3,4]} title='Rent properties'/>
+      arr={[1,2,3,4]} 
+      title='Rent properties'/>
+       <HomePageProducts
+      arr={[1,2,3,4]} 
+      title='Rent properties'/>
+       <HomePageProducts
+      arr={[1,2,3,4]} 
+      title='Rent properties'/>
 
     </div>
   )

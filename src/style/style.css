@@ -198,13 +198,19 @@ body {
     display: none;
   }
 }
-.Navigation {
-  padding: 0.5rem 3rem;
+.Navigation__wraperr {
   width: 100%;
   position: fixed;
   top: 0%;
   left: 0%;
   z-index: 1000;
+  padding: 0.5rem 0;
+}
+
+.Navigation {
+  padding: 0.5rem 3rem;
+  width: 100%;
+  height: 12vh;
 }
 .Navigation__container {
   display: flex;
@@ -343,6 +349,9 @@ body {
   }
 }
 @media screen and (max-width: 1020px) {
+  .Navigation {
+    height: auto;
+  }
   .Navigation__content {
     flex: 0;
     margin: 0%;
