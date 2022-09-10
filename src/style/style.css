@@ -204,16 +204,20 @@ body {
   top: 0%;
   left: 0%;
   z-index: 1000;
-  padding: 0.5rem 0;
+  padding: 0.1rem 0;
 }
 
 .Navigation {
   padding: 0.5rem 3rem;
   width: 100%;
   height: 12vh;
+  display: flex;
+  align-items: center;
 }
 .Navigation__container {
   display: flex;
+  align-items: center;
+  width: 100%;
 }
 .Navigation__logo {
   margin: 0rem 4rem 0 0;
@@ -221,7 +225,7 @@ body {
 }
 .Navigation__logo h1 {
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 2.25rem;
 }
 .Navigation__content {
   flex: 1;
@@ -255,7 +259,7 @@ body {
 }
 
 .Special-navbar {
-  padding-top: 1rem;
+  padding-top: 0.8rem;
   align-items: flex-start !important;
 }
 .Special-navbar li a {
@@ -267,9 +271,6 @@ body {
   text-transform: uppercase !important;
   font-weight: 700;
   transition: 0.3s all ease-in;
-}
-.Special-navbar li a p:hover {
-  border-bottom: 3px solid white;
 }
 
 .hamBurgerToggle {
