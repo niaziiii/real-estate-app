@@ -1,9 +1,10 @@
 import React from 'react'
 import {Carousel, SearchProduct,HomePageProducts} from "../../components/index";
-
+import Navigation from '../Navigation/Navigation';
 function Home() {
   return (
     <div className='Carousel-Home'>
+      <Navigation/>
       <Carousel/>
       <SearchProduct/>
       <HomePageProducts

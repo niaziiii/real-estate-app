@@ -1,12 +1,20 @@
-import {Home,Navigation} from "./constrains/index";
+import {Home,ProductOverviewPage} from "./constrains/index";
 import './style/style.css'
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
+
 
 function App() {
   return (
     <div className='app' >
-      <Home/>
-      <Navigation/>
+      <Routes>
+      <Route path="/" element={<Home/>}> </Route>
+      <Route path="/:productId" element={<ProductOverviewPage/>}> </Route>
 
+    </Routes>
+      
     </div>
   );
 }
