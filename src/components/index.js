@@ -1,4 +1,5 @@
 import Carousel from "./Carousel/Carousel";
+import Footer from "./Footer/Footer";
 import HomePageProducts from "./HomePageProducts/HomePageProducts";
 import Navbar from "./Navbar/Navbar";
 import Product from "./Product/Product";
@@ -10,5 +11,6 @@ export {
     Navbar,
     SearchProduct,
     Product,
-    HomePageProducts
+    HomePageProducts,
+    Footer
 }
