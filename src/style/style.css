@@ -530,4 +530,214 @@ body {
   .app__Home-product-slider {
     width: 98%;
   }
+}
+.app__productOverview {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.app__productOverview__header {
+  width: 100%;
+}
+.app__productOverview__header__image {
+  width: 100%;
+  background-color: black;
+}
+.app__productOverview__header__image img {
+  min-width: 100%;
+  height: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.7;
+}
+
+.app__productOverview__dir {
+  padding: 2rem 0;
+  width: 90%;
+  margin: auto;
+  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.app__productOverview__dir h3 {
+  margin-right: 0.6rem;
+  display: flex;
+  align-items: center;
+}
+.app__productOverview__dir h3 a {
+  color: gray;
+}
+
+.app__productOverview__content {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+}
+.app__productOverview__content__left {
+  flex: 0 0 65%;
+  margin-right: 5%;
+}
+.app__productOverview__content__right {
+  flex: 1;
+}
+
+.app__productOverview__content__left__heading {
+  padding: 3rem 0;
+}
+.app__productOverview__content__left__heading__types {
+  display: flex;
+  flex-direction: row;
+}
+.app__productOverview__content__left__heading__types h3 {
+  margin-right: 0.5rem;
+  background-color: #1480bd;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+.app__productOverview__content__left__heading__types h3:nth-of-type(3) {
+  background-color: rgb(50, 2, 128);
+}
+.app__productOverview__content__left__heading h2 {
+  margin: 1rem 0;
+}
+.app__productOverview__content__left__heading span {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.app__productOverview__content__left__heading span svg {
+  font-size: 1.55rem;
+  margin-right: 0.9rem;
+}
+.app__productOverview__content__left__heading .description {
+  font-size: 1.25rem;
+}
+.app__productOverview__content__left__heading__icons {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid grey;
+}
+.app__productOverview__content__left__heading__icons span {
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.app__productOverview__content__left__heading__icons span svg {
+  font-size: 2rem;
+  color: rgb(50, 2, 128);
+}
+.app__productOverview__content__left__heading__icons span h3 {
+  margin-left: 0.3rem;
+}
+
+.app__productOverview__content__right__agent {
+  margin-top: 2.5rem;
+  box-shadow: 0 0 3px black;
+  padding: 0.5rem;
+}
+.app__productOverview__content__right__agent div {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.app__productOverview__content__right__agent div span {
+  background-color: rgb(50, 2, 128);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.2rem 0.4rem;
+  margin-right: 0.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+.app__productOverview__content__right__agent div span svg {
+  margin-right: 0.3rem;
+}
+.app__productOverview__content__right__agent span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.app__productOverview__content__right__agent span p {
+  margin-right: 0.5rem;
+}
+
+.app__productOverview__content__right__amenities {
+  display: block;
+  margin-top: 1rem;
+}
+.app__productOverview__content__right__amenities span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+.app__productOverview__content__right__amenities span svg {
+  font-size: 1.24rem;
+}
+.app__productOverview__content__right__amenities span p {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 950px) {
+  .app__productOverview__content {
+    flex-direction: column;
+  }
+  .app__productOverview__content__left {
+    margin-right: 0%;
+  }
+  .app__productOverview__content__right__amenities {
+    padding: 3rem 0;
+  }
+  .app__productOverview__content__right__amenities div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .app__productOverview__content__right__agent {
+    width: 25rem;
+  }
+  .app__productOverview__content__left__heading__icons {
+    width: 80%;
+    margin: 2rem auto;
+    justify-content: space-between;
+  }
+  .app__productOverview__content__left__heading__icons span {
+    margin-right: 0%;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 600px) {
+  .app__productOverview__content__left__heading__types {
+    flex-wrap: wrap;
+  }
+  .app__productOverview__content__left__heading__types h3 {
+    margin-bottom: 0.5rem;
+  }
+  .app__productOverview__content__left__heading__icons {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .app__productOverview__content__left__heading__icons span {
+    margin-right: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+  .app__productOverview__content__right__agent {
+    width: 100%;
+    min-width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
