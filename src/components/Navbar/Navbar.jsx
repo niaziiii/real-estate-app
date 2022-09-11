@@ -1,10 +1,16 @@
 import React from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { IoMdClose } from "react-icons/io";
-import { navObj, genLists ,MobGenLists} from './nav'
+import { IoMdClose, IoMdCloseCircleOutline } from "react-icons/io";
+import SearchProduct from '../SearchProduct/SearchProduct';
+import { navObj, genLists, MobGenLists } from './nav'
+import { BiSearch } from 'react-icons/bi'
+
 
 function Navbar() {
     const [showNav, setShowNav] = React.useState(false)
+    const [showSearch, setShowSearch] = React.useState(false)
+
+
     return (
         <div className='Navigation__container'>
             <div className="Navigation__logo">
@@ -14,7 +20,15 @@ function Navbar() {
 
                 <ul className='main-nav-row'>
                     {navObj.main.map((el, i) => genLists(el))}
+                    
+                    <li onClick={()=> setShowSearch(true)}>
+                       <span className='searchmain'>
+                       <BiSearch />
+                        <p>Search</p>
+                       </span>
+                    </li>
 
+        
                     <button className='hamBurgerToggle' onClick={() => setShowNav(true)}>
                         <GiHamburgerMenu fontSize={35} />
                     </button>
@@ -30,11 +44,18 @@ function Navbar() {
                             <button onClick={() => setShowNav(false)}><IoMdClose /></button>
                             <ul>
                                 <h1>Sky Liner</h1>
-                                {navObj.ordainay.map((el, i) => <MobGenLists obj={el} i={i} key={i}/>)}
+                                {navObj.ordainay.map((el, i) => <MobGenLists obj={el} i={i} key={i} />)}
                             </ul>
                         </div>
                         : ''
                 }
+
+                {showSearch ?
+                    <div className='fixedSearchContainer '>
+                       <button onClick={()=>setShowSearch(false)}><IoMdCloseCircleOutline/></button>
+                        <SearchProduct />
+                        </div>
+                    : ''}
             </div>
         </div>
     )

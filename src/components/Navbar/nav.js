@@ -1,7 +1,6 @@
 import { FiPhoneCall } from 'react-icons/fi'
 import { AiOutlineMail } from 'react-icons/ai'
 import { GoChecklist } from 'react-icons/go'
-import { BiSearch } from 'react-icons/bi'
 import { VscChevronDown ,VscChevronUp} from "react-icons/vsc";
 import React from 'react'
 
@@ -23,11 +22,7 @@ const navObj = {
             ref: '/',
             icon: <GoChecklist />
         },
-        {
-            text: 'Search',
-            ref: '/',
-            icon: <BiSearch />
-        }
+
     ],
     ordainay: [
         {
@@ -94,10 +89,7 @@ const MobGenLists = ({ obj, i }) => {
     const [openAccordion, setOpenAccordion] = React.useState(obj.isOpen)
     if (obj.toggle) {
         return (
-            <li onClick={()=>{
-                setOpenAccordion(!openAccordion)
-                console.log(openAccordion);
-            }}>
+            <li onClick={()=>setOpenAccordion(!openAccordion)}>
                 <a href='#go'>
                     <p>{obj.text}</p>
                     {
