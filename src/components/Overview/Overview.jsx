@@ -12,7 +12,6 @@ function Overview() {
     const navEl = React.useRef(doc)
     const targetRef = React.useRef(null)
 
-    console.log(targetRef);
     const callBackFUnction = entires => {
         const [entry] = entires
         if (entry.isIntersecting) {
@@ -58,6 +57,10 @@ function Overview() {
                 <div className="app__productOverview__content__right">
                     <OverviewAgent />
                     <OverViewAmenities />
+                    <div className="app__productOverview__content__right__button">
+                        <button>Book a viewing</button>
+                        <button>view brochure</button>
+                    </div>
                 </div>
 
             </div>

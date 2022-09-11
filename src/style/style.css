@@ -615,7 +615,7 @@ a {
   padding: 2rem 0;
   width: 90%;
   margin: auto;
-  border-bottom: 1px solid grey;
+  border-bottom: 2px solid rgb(187, 186, 186);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -635,10 +635,12 @@ a {
   flex-direction: row;
   width: 90%;
   margin: auto;
+  padding-bottom: 2rem;
 }
 .app__productOverview__content__left {
   flex: 0 0 65%;
   margin-right: 5%;
+  overflow: hidden;
 }
 .app__productOverview__content__right {
   flex: 1;
@@ -671,9 +673,12 @@ a {
 .app__productOverview__content__left__heading span svg {
   font-size: 1.55rem;
   margin-right: 0.9rem;
+  color: rgb(50, 2, 128);
 }
 .app__productOverview__content__left__heading .description {
-  font-size: 1.25rem;
+  font-size: 1.14rem;
+  line-height: 1.75rem;
+  color: gray;
 }
 .app__productOverview__content__left__heading__icons {
   display: flex;
@@ -681,7 +686,7 @@ a {
   background-color: white;
   margin-top: 1rem;
   padding: 1rem 0;
-  border-top: 1px solid grey;
+  border-top: 2px solid rgb(187, 186, 186);
 }
 .app__productOverview__content__left__heading__icons span {
   margin-right: 5rem;
@@ -691,10 +696,14 @@ a {
 }
 .app__productOverview__content__left__heading__icons span svg {
   font-size: 2rem;
-  color: rgb(50, 2, 128);
+  color: #1480bd;
 }
 .app__productOverview__content__left__heading__icons span h3 {
   margin-left: 0.3rem;
+}
+.app__productOverview__content__left__heading__icons span h3 p {
+  font-weight: 100;
+  color: gray;
 }
 
 .app__productOverview__content__right__agent {
@@ -702,11 +711,21 @@ a {
   box-shadow: 0 0 3px black;
   padding: 0.5rem;
 }
+.app__productOverview__content__right__agent h2 {
+  color: grey;
+  margin-top: 0.4rem;
+}
 .app__productOverview__content__right__agent div {
   display: flex;
   flex-direction: row;
   margin-top: 1rem;
   flex-wrap: wrap;
+}
+.app__productOverview__content__right__agent div a:nth-of-type(2) span {
+  background-color: #1480bd;
+}
+.app__productOverview__content__right__agent div a:nth-of-type(3) span {
+  background-color: rgb(82, 224, 82);
 }
 .app__productOverview__content__right__agent div span {
   background-color: rgb(50, 2, 128);
@@ -733,6 +752,7 @@ a {
 .app__productOverview__content__right__amenities {
   display: block;
   margin-top: 1rem;
+  padding: 1rem 0;
 }
 .app__productOverview__content__right__amenities span {
   display: flex;
@@ -746,9 +766,45 @@ a {
 }
 .app__productOverview__content__right__amenities span p {
   font-size: 1rem;
+  color: gray;
+}
+
+.app__productOverview__content__right__button {
+  display: flex;
+  flex-direction: column;
+}
+.app__productOverview__content__right__button button {
+  cursor: pointer;
+  text-transform: capitalize;
+  background-color: black;
+  color: white;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  font-weight: 700;
+  width: 75%;
+}
+
+.overview-slider {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.overview-slider__container img {
+  width: 100%;
+  height: 25rem;
 }
 
 @media screen and (max-width: 950px) {
+  .app__productOverview__content__right__button {
+    align-items: center;
+    justify-content: center;
+  }
+  .app__productOverview__content__right__button button {
+    background-color: black;
+    width: 50%;
+  }
+  .overview-slider__container img {
+    height: 18rem;
+  }
   .app__productOverview__content {
     flex-direction: column;
   }
@@ -766,6 +822,9 @@ a {
   .app__productOverview__content__right__agent {
     width: 25rem;
   }
+  .app__productOverview__content__left__heading {
+    padding: 1rem 0;
+  }
   .app__productOverview__content__left__heading__icons {
     width: 80%;
     margin: 2rem auto;
@@ -777,6 +836,9 @@ a {
   }
 }
 @media screen and (max-width: 600px) {
+  .overview-slider__container img {
+    height: auto;
+  }
   .app__productOverview__content__left__heading__types {
     flex-wrap: wrap;
   }

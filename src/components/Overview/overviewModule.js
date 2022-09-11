@@ -3,8 +3,49 @@ import { IoIosArrowForward } from "react-icons/io";
 import { AiOutlineAreaChart } from "react-icons/ai";
 import { FaBed, FaBath, FaLocationArrow } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
+import { BsWhatsapp } from "react-icons/bs";
+import { AiOutlineMail } from "react-icons/ai";
+import Slider from "react-slick";
 
 
+
+import img1 from './../../assests/IMGS/vila1.jpg'
+import img2 from './../../assests/IMGS/vila2.jpg'
+import img3 from './../../assests/IMGS/vila3.jpg'
+import img4 from './../../assests/IMGS/vila4.jpg'
+import img5 from './../../assests/IMGS/vila5.jpg'
+
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const images = [img1,img2,img3,img4,img5];
+
+
+const OverviewSlider = () =>{
+        const settings = {
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+
+
+    return(
+        <div className='overview-slider'>
+        <Slider {...settings}>
+            {images.map((el,i) =>{
+                return(
+                    <div className='overview-slider__container' key={i}>
+                        <img src={el} alt={i}/>
+                    </div>
+                )
+            })}
+        </Slider>
+        </div>
+    )
+}
 const OverViewDir = () => {
     return (<div className="app__productOverview__dir">
         <h3> <Link to="/">Home</Link></h3>
@@ -54,6 +95,8 @@ const OverViewLeftHeading = () => {
             <h2>Furnished|Meydan|Great Location|Gated Community</h2>
             <span> <FaLocationArrow /><b>abu, Dubai</b></span>
            {headIcons()}
+           <OverviewSlider/>
+
             <p className='description'>MAG City Meydan an urban district with desirable homes and community living, with its abundance of green spaces, walkways and parks. While living in the tranquility of a suburban lifestyle, inner-city life is only heartbeats away, with magnificent views of an unobstructed Dubai skyline.The location of the project is one of its key advantages. This exceptional gated community is in the heart of Mohammed bin Rachid City, District 7. Only a few minutes from Downtown and Burj Khalifa, 15 minutes from the well- known beaches of Jumeirah and 20 minutes to the airport.MAG City will offer its residents the finest in sporting and wellness. The blue skies and large open green spaces support a vibrant and healthy lifestyle, with dedicated sports facilities, gyms and semi-Olympic size swimming pools, running tracks and more. Horse riding, cycling are just a few of the activities in the vicinity along with the largest health club in Dubai.</p>
         </div>
 
@@ -68,8 +111,8 @@ const OverviewAgent = () => {
 
             <div>
                 <a href="/+343"><span><FiPhoneCall /><p>Call Now</p></span></a>
-                <a href="/+343"><span><FiPhoneCall /><p>Call Now</p></span></a>
-                <a href="/+343"><span><FiPhoneCall /><p>Call Now</p></span></a>
+                <a href="/+343"><span><AiOutlineMail /><p>Mail</p></span></a>
+                <a href="/+343"><span><BsWhatsapp /><p>Whatsapp</p></span></a>
             </div>
             <span><p>Reference:</p> <b>SLR-S-2273</b></span>
         </div>
@@ -94,5 +137,5 @@ export {
     OverViewDir,
     OverViewLeftHeading,
     OverviewAgent,
-    OverViewAmenities,
+    OverViewAmenities
 }

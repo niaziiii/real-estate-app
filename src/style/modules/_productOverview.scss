@@ -26,7 +26,7 @@ a{
     padding: 2rem 0;
     width: 90%;
     margin: auto;
-    border-bottom: 1px solid grey;
+    border-bottom: 2px solid rgb(187, 186, 186);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -43,10 +43,11 @@ a{
     flex-direction: row;
     width: 90%;
     margin:auto;
+    padding-bottom: 2rem;
     &__left{
         flex: 0 0 65%;
-        // background-color:red;
         margin-right: 5%;
+        overflow: hidden;
     }
     &__right{
         flex: 1;
@@ -81,12 +82,14 @@ a{
         svg{
             font-size: 1.55rem;
             margin-right: .9rem;
+            color: $colr-dark-blue;
         }
     }
 
     .description{
-        font-size: 1.25rem;
-
+        font-size: 1.14rem;
+        line-height: 1.75rem;
+        color: gray;
     }
     &__icons{
         display: flex;
@@ -94,15 +97,16 @@ a{
         background-color: white;
         margin-top: 1rem;
         padding: 1rem 0;
-        border-top: 1px solid grey;
+        border-top: 2px solid rgb(187, 186, 186);
         span{
             margin-right: 5rem;
             display: flex;
             flex-direction: row;
             align-items: center;
-            svg{font-size: 2rem; color: $colr-dark-blue;}
+            svg{font-size: 2rem; color: $color-blue;}
             h3{
                 margin-left: .3rem;
+                p{font-weight: 100; color: gray;}
             }
         }
     }
@@ -113,12 +117,20 @@ a{
     // background-color: rebeccapurple;
     box-shadow: 0 0 3px black;
     padding: .5rem;
+    h2{
+        color:grey;
+        margin-top: .4rem;
+    }
     div{
         display: flex;
         flex-direction: row;
         // justify-content: space-between;
         margin-top: 1rem;
         flex-wrap: wrap;
+        a{
+            &:nth-of-type(2) span{background-color: $color-blue;}
+            &:nth-of-type(3) span{background-color: rgb(82, 224, 82);}
+        }
         span{
             background-color: $colr-dark-blue;
             display: flex;
@@ -128,6 +140,7 @@ a{
             margin-right: .5rem;
             color: white;
             margin-bottom: .5rem;
+            
             svg{
                 margin-right: .3rem;
             }
@@ -149,6 +162,7 @@ a{
 .app__productOverview__content__right__amenities{
     display: block;
     margin-top: 1rem;
+    padding: 1rem 0;
     span{
         display: flex;
         flex-direction: row;
@@ -156,11 +170,52 @@ a{
         margin-top: 1rem;
         margin-left: 2rem;
         svg{font-size: 1.24rem;}
-        p{font-size: 1rem; }
+        p{font-size: 1rem; color: gray;}
+    }
+}
+
+.app__productOverview__content__right__button{
+    display: flex;
+    flex-direction: column;
+    button{
+        cursor: pointer;
+        text-transform: capitalize;
+        background-color: black;
+        color: white;
+        margin-top :  1rem;
+        padding: 1rem 0;
+        font-weight: 700;
+        width: 75%;
+    }
+}
+
+.overview-slider{
+    text-align: center;
+    margin-bottom: 3rem;
+    &__container{
+        img{
+            width: 100%;
+            height: 25rem;
+        }
     }
 }
 
 @media screen and (max-width:950px) {
+    .app__productOverview__content__right__button{
+        align-items: center;
+        justify-content: center;        button{
+            background-color: black;
+          
+            width: 50%;
+        }
+    }
+    .overview-slider{
+        &__container{
+            img{
+                height: 18rem;
+            }
+        }
+    }
     .app__productOverview__content{
         flex-direction: column;
     }
@@ -179,6 +234,7 @@ a{
         width: 25rem;
     }
     .app__productOverview__content__left__heading{
+        padding: 1rem 0 ;
         &__icons{
             width: 80%;
             margin: 2rem auto;
@@ -195,6 +251,15 @@ a{
 
 
 @media screen and (max-width:600px) {
+
+    .overview-slider{
+        &__container{
+            img{
+                height: auto;
+            }
+        }
+    }
+
 .app__productOverview__content__left__heading{
     &__types{
         flex-wrap: wrap;
