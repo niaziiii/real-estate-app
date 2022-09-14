@@ -1,8 +1,9 @@
 import Home from "./home/Home";
-import Navigation from "./Navigation/Navigation";
 import ProductOverviewPage from "./ProductOverviewPage/ProductOverviewPage";
+import SearchPageProduct from "./SearchPageProduct/SearchPageProduct";
+
 export {
     Home,
-    Navigation,
-    ProductOverviewPage
+    ProductOverviewPage,
+    SearchPageProduct
 }

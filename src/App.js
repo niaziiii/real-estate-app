@@ -1,4 +1,4 @@
-import {Home,ProductOverviewPage} from "./constrains/index";
+import {Home,ProductOverviewPage,SearchPageProduct} from "./constrains/index";
 import './style/style.css'
 import {
   Routes,
@@ -12,7 +12,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Home/>}> </Route>
       <Route path="/property/:productId" element={<ProductOverviewPage/>}> </Route>
-
+      <Route path="/properties" element={<SearchPageProduct/>}> </Route>
     </Routes>
       
     </div>
