@@ -552,6 +552,9 @@ body {
   font-weight: 700;
   display: none;
 }
+.app__Product__container__content__text {
+  text-align: start;
+}
 .app__Product__container__content__text h2 {
   font-weight: 500;
   font-size: 1.3rem;
@@ -566,6 +569,37 @@ body {
 .app__Product__container__content__text p b {
   font-size: 1.5rem;
   white-space: normal;
+}
+.app__Product__container__content__location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.app__Product__container__content__location svg {
+  font-size: 1.75rem;
+  color: #1480bd;
+  margin-right: 0.5rem;
+}
+.app__Product__container__content__icons {
+  display: flex;
+}
+.app__Product__container__content__icons__icon {
+  margin-top: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+}
+.app__Product__container__content__icons__icon svg {
+  font-size: 1.75rem;
+  color: #1480bd;
+  margin-right: 0.5rem;
+}
+.app__Product__container__content__icons__icon:nth-of-type(2) {
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
 }
 
 .app__Home-product-slider {
