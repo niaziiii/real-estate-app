@@ -3,6 +3,8 @@ import { Product } from './../index'
 import Slider from "react-slick";
 
 function HomePageProducts({arr,title}) {
+  // eslint-disable-next-line 
+  const dataArr = arr;
   const settings = {
     className: "center",
     infinite: true,
@@ -33,11 +35,11 @@ function HomePageProducts({arr,title}) {
 
   return (
     <div className='app__Home-product-slider'>
-      {arr.length > 3 ? 
+      {dataArr? 
     <>
         <h2>{title}</h2>
       <Slider {...settings}>
-        {arr.map((el, i) => <div className='Product-Container' key={i}><Product /></div>)}
+        {dataArr.map((el, i) => <div className='Product-Container' key={i}><Product data ={el}/></div>)}
       </Slider>
       
     </>
