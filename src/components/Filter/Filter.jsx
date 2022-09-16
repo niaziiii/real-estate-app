@@ -1,16 +1,21 @@
 import React from 'react'
 import Product from '../Product/Product'
-function Filter() {
+function Filter(props) {
+  const data = props.data;
   return (
+    <>
+    <h1 style={{width:'100%', textAlign:'center', textTransform:'capitalize',padding:'2rem 0 0 0'} }>Total result {data.length}</h1>
     <div className='Filter-Product'>
+      
       <div className='Filter-Product__container'>
         {
-          [1, 2, 3, 4, 5, 6, 4, 3, 23, 2, 4, 34, 24, 2].map((el, i) => {
-            return <div className='Filter-Product__container__products' key={i}><Product /></div>
+          data.map((el, i) => {
+            return <div className='Filter-Product__container__products' key={i}><Product data={el}/></div>
           })
         }
       </div>
     </div>
+    </>
 
   )
 }
