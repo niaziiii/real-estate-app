@@ -1,4 +1,4 @@
-import {Home,ProductOverviewPage,SearchPageProduct} from "./constrains/index";
+import {Home,ProductOverviewPage,SearchPageProduct} from "./pages/index";
 import './style/style.css'
 import {
   Routes,
