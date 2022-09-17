@@ -17,6 +17,12 @@ function Product(prop) {
     <div className="app__Product__container__img">
         <img src={data.coverImages[0]} alt="Products" />
         <p className='slide-bottom'>View Details</p>
+        <div className="app__Product__container__head">
+          <span>
+            <b>{data.type}</b>
+            <b>{data.category}</b>
+            </span>
+        </div>
     </div>
     <div className="app__Product__container__content">
        <div className="app__Product__container__content__text">
