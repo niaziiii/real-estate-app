@@ -4,7 +4,6 @@ function Filter(props) {
   const data = props.data;
   return (
     <>
-    <h1 style={{width:'100%', textAlign:'center', textTransform:'capitalize',padding:'2rem 0 0 0'} }>Total result {data.length}</h1>
     <div className='Filter-Product'>
       
       <div className='Filter-Product__container'>
