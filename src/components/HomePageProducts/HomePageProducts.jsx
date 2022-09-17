@@ -1,8 +1,19 @@
 import React from 'react'
 import { Product } from './../index'
 import Slider from "react-slick";
+import {useNavigate} from 'react-router-dom'
 
-function HomePageProducts({arr,title}) {
+const buttonStyle = {
+  background : '#1480bd',
+  padding : '.5rem 1.2rem',
+  border : 'none',
+  outline : 'none',
+  cursor : 'pointer',
+  fontWeight : '800',
+  color : 'white'
+}
+function HomePageProducts({arr,title,refLink}) {
+  const navigate = useNavigate();
   // eslint-disable-next-line 
   const dataArr = arr;
   const settings = {
@@ -41,7 +52,11 @@ function HomePageProducts({arr,title}) {
       <Slider {...settings}>
         {dataArr.map((el, i) => <div className='Product-Container' key={i}><Product data ={el}/></div>)}
       </Slider>
-      
+      <button style={buttonStyle} onClick={()=>{
+          navigate('/properties',{
+            state : refLink
+          })
+      }}>Check more</button>
     </>
       : ''}
          </div>

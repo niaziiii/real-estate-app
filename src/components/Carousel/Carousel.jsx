@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import file from './file'
 
 const settings = {
   autoplay: true,
@@ -15,9 +14,8 @@ const settings = {
   slidesToScroll: 1
 };
 
-function Carousel() {
+function Carousel({data}) {
   // eslint-disable-next-line 
-  const [items,_] = React.useState(file)
   const doc = document.getElementsByClassName('Navigation__wraperr')
   const navEl = React.useRef(doc)
 
@@ -52,7 +50,7 @@ function Carousel() {
   return (
     <div className="Carousel-Home__container" ref={targetRef}>
       <Slider {...settings} className='Carousel-Home__container__carousel'>
-        {items.map((el, i) => {
+        {data.map((el, i) => {
           return (
             <div key={i} className="carouselBox">
               <img src={el.image} alt="images" />

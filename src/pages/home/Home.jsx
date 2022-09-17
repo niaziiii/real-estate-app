@@ -5,7 +5,7 @@ import {Carousel, SearchProduct,HomePageProducts,Footer} from "../../components/
 import Navigation from '../Navigation/Navigation';
 
 function Home() {
-  const [property,setProperty] = React.useState(null)
+  const [property,setProperty] = React.useState([])
   useEffect(()=>{
     async function getProperties() {
       const data = await getItems('http://127.0.0.1:4000/api/v1')
@@ -14,20 +14,36 @@ function Home() {
       getProperties()
   },[])
 
+
+  const carouselData = property.map(el =>{
+    return({
+      image : el.coverImages[0],
+      title : el.nameProperty.slice(0,32),
+      description : el.location
+    })
+  })
+
+  const sale = property.filter(el => el.type === 'sale')
+  const rent = property.filter(el => el.type === 'rent')
   return (
     <div className='Carousel-Home'>
       <Navigation/>
-      <Carousel/>
+      <Carousel data={carouselData.slice(0,5)}/>
       <SearchProduct/>
+
       <HomePageProducts
-      arr={property} 
-      title='Rent properties'/>
-       {/* <HomePageProducts
-      arr={property} 
-      title='Sale properties'/>
-       <HomePageProducts
-      arr={property} 
-      title='Rent properties'/> */}
+      arr={sale} 
+      title='Properties available for sale'
+      refLink={'type=sale'}
+      />
+      
+      <HomePageProducts
+      arr={rent} 
+      title='Properties available for rent'
+      refLink={'type=rent'}
+      />
+      
+      
 
     <Footer/>
     </div>
