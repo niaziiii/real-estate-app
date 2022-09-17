@@ -5,6 +5,7 @@ import HeaderImage from "./HeaderImage/HeaderImage";
 import HomePageProducts from "./HomePageProducts/HomePageProducts";
 import Navbar from "./Navbar/Navbar";
 import Overview from "./Overview/Overview.jsx";
+import Pagination from "./Pagination/Pagination";
 import Product from "./Product/Product";
 import SearchProduct from "./SearchProduct/SearchProduct";
 export {
@@ -17,5 +18,6 @@ export {
     Overview,
     Filter,
     HeaderImage,
+    Pagination
 
 }
