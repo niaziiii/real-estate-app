@@ -1,5 +1,5 @@
 $color-blue : #1480bd;
-$colr-dark-blue: rgb(50, 2, 128);
+$colr-dark-blue: #093679;
 $color-grey :#ececec;
 
 
@@ -8,8 +8,8 @@ $color-grey :#ececec;
 	        animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 .slide-bottom {
-	-webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-webkit-animation: slide-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 /* ----------------------------------------------

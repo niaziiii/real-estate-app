@@ -68,7 +68,7 @@ a{
             padding: .5rem 1rem;
             color: white;
             &:nth-of-type(3){
-                background-color: rgb(50, 2, 128);
+                background-color:$colr-dark-blue;
             }
         }
     }

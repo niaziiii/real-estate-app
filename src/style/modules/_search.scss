@@ -9,16 +9,17 @@
 .app__Serach__container{
         display: flex;
         justify-content: center;
+        width: 80%;
         form{
+            width: 100%;
             padding: 0 2rem;
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
             justify-content: center;
+            flex-wrap: wrap;
             align-items: center;
+            h3{display: none;}
             select{
-                background-color: white;
-                width: 7rem;
+                flex:  1;
                 padding: .5rem 0;
                 margin-right:  1rem;
                 margin-bottom: .5rem;
@@ -30,7 +31,10 @@
                 }
             }
             input[type='submit']{
-                // flex: 1;
+                display: block;
+                width: 100%;
+                min-width:5rem;
+                flex: 1;
                 border-radius: 10px;
                 background-color: $color-blue;
                 border: none;
@@ -47,14 +51,16 @@
 
 @media screen and (max-width:950px) {
     .app__Search{
-        height: 25vh;
+        height: 30vh;
     }    
     .app__Serach__container{
+        width: 100%;
         form{
             padding: 0 .5rem;
             select{
+                flex: none;
+                display: block;
                 background-color: white;
-                width: 6rem;
                 padding: .3rem 0;
             }
         }

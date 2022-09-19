@@ -41,6 +41,7 @@ function SearchProduct() {
         e.preventDefault()
         formData.handleSubmit()
       }}>
+        <h3>Search for specific property</h3>
         <select name="location"
           onChange={formData.handleChange}
           onBlur={formData.handleBlur}

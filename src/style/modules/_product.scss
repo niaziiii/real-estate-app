@@ -1,35 +1,59 @@
 .app__Product{
-    margin:2rem;
+    margin:1rem 0;
     background-color: $color-grey;
     display: flex;
     justify-content: center;
     width: 20rem;
     min-width: 20rem;
     transition: 3s all cubic-bezier(0.42, 0, 1, -0.51);
-    margin-left: 2rem !important;
-
+    cursor: pointer;
+    box-shadow: 0 0 2px black;
+    border-radius: 10px;
     &__container{
         text-decoration: none;
         color: black;
         padding: 1rem;
-        &:hover &__img{ 
-            
-            img{opacity: .5;} p {display: inline;}}
+        overflow: hidden;
+        transition:.3s all cubic-bezier(0.42, 0, 1, -0.51);
 
+        &:hover &__img{  
+             img{opacity: .7; scale: 1.2;} 
+                p {display: inline;
+                    opacity: 1;
+                }}
+
+        &__head{
+            display: block;
+            top: 2%;
+            left: 2%;
+            position: absolute;
+            span{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                b{
+                    color: $colr-dark-blue;
+                    text-transform: capitalize;
+                    padding: .5rem .5rem;
+                    background-color: white;
+                    &:nth-of-type(2){background-color: $color-blue; padding: .5rem 1rem;}
+                }
+            }
+        }
         &__img{
             position: relative;
             height: 12rem;
             background-color: black;
+            overflow: hidden;
 
             img{
                 width: 100%;
                 height: 100%;
-             transition: .1s all cubic-bezier(0.42, 0, 1, -0.51);
+             transition:.4s all cubic-bezier(0.42, 0, 1, -0.51);
 
             }
             p{
-             transition: .8s all cubic-bezier(0.42, 0, 1, -0.51);
-
+                opacity: 0;
                 position: absolute;
                 top: 0%;
                 left: 25%;
@@ -38,6 +62,7 @@
                 font-size: 1.5rem;
                 font-weight: 700;
                 display: none;
+
             }
         }
 
@@ -48,16 +73,18 @@
                     font-weight: 500;
                     font-size: 1.3rem;
                     white-space: normal;
+                    margin-top: .5rem;
+                    color: $colr-dark-blue;
                     
                 }
                 span{
-                    margin: 1rem 0;
+                    margin: .5rem 0;
                     display: flex;
                     align-items: center;
                     white-space: normal;
                 }
                 p{
-                    b{font-size: 1.5rem; white-space: normal;}
+                    b{font-size: 1rem; font-weight: 600; white-space: normal;}
                 }
             }
             &__location{
@@ -77,6 +104,7 @@
                     align-items: center;
                     padding: .2rem .5rem;
                     svg{font-size: 1.75rem; color: $color-blue; margin-right: .5rem;}
+                    b{font-weight: 100; font-size: .75rem;}
                     &:nth-of-type(2){
                         border-left: 1px solid gray;
                         border-right: 1px solid gray;
@@ -118,6 +146,7 @@
         display: grid;
         grid-template-columns: repeat(4,1fr);
         &__products{
+            padding: 0 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
