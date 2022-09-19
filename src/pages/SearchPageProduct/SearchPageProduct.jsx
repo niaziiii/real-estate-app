@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Footer, Filter, HeaderImage, SearchProduct, Pagination } from '../../components';
 import { getItems } from '../../components/Helper';
-import Navigation from '../Navigation/Navigation';
 
 function SearchPageProduct() {
   const [properties, setProperties] = useState([]);
@@ -32,7 +31,6 @@ function SearchPageProduct() {
   const paginate = (pageNumber) => { setCurrentPage(pageNumber) }
   return (
     <div className='Search-Product-Page'>
-      <Navigation />
       <HeaderImage />
       <SearchProduct />
       <h1 style={{ width: '100%', textAlign: 'center', textTransform: 'capitalize', padding: '2rem 0 0 0' }}>Total result {properties.length}</h1>

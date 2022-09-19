@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect } from 'react';
 import { getItems } from '../../components/Helper';
 import {Carousel, SearchProduct,HomePageProducts,Footer} from "../../components/index";
-import Navigation from '../Navigation/Navigation';
 
 function Home() {
   const [property,setProperty] = React.useState([])
@@ -27,7 +26,6 @@ function Home() {
   const rent = property.filter(el => el.type === 'rent')
   return (
     <div className='Carousel-Home'>
-      <Navigation/>
       <Carousel data={carouselData.slice(0,5)}/>
       <SearchProduct/>
 

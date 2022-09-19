@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 import { Overview, Footer, HeaderImage, Product } from "../../components/index";
-import Navigation from '../Navigation/Navigation';
 import { getItems } from '../../components/Helper';
 
 function ProductOverviewPage() {
@@ -31,7 +30,6 @@ function ProductOverviewPage() {
 
   return (
     <div>
-      <Navigation />
       <HeaderImage />
       {property ?
         <Overview property={property} />
