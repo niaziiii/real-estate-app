@@ -1,48 +1,36 @@
+import React from 'react'
+
 import { FiPhoneCall } from 'react-icons/fi'
 import { AiOutlineMail } from 'react-icons/ai'
-import { GoChecklist } from 'react-icons/go'
 import { VscChevronDown ,VscChevronUp} from "react-icons/vsc";
-import React from 'react'
+import { Link,useNavigate } from 'react-router-dom';
 
 const navObj = {
     main: [
 
         {
             text: '+923083909131',
-            ref: '/',
+            ref: 'tel:+923083909131',
             icon: <FiPhoneCall />
         },
         {
-            text: 'muhabatkhan03@gmail.com',
-            ref: '/',
+            text: 'muhabat@niazi.com',
+            ref: 'mailto:muhabatkhan03@gmail.com',
             icon: <AiOutlineMail />
         },
-        {
-            text: 'List Your Property',
-            ref: '/',
-            icon: <GoChecklist />
-        },
-
     ],
     ordainay: [
         {
             isOpen: false,
             toggle: true,
             text: 'Buy',
-            ref: '/',
-            links : [
-                {
-                    ref : '/#dd',
-                    text : 'Ready Properties'
-                },{
-                    ref : '/#ff',
-                    text : 'Off-Plan'
-                }
-            ]
+            ref: '/properties',
+            query: 'type=sale',
         },
         {
             text: 'Rent',
-            ref: '/'
+            ref: '/properties',
+            query: 'type=rent'
         },
         {
             isOpen: false,
@@ -60,16 +48,12 @@ const navObj = {
             ]
         },
         {
-            text: 'Service',
-            ref: '/'
-        },
-        {
             text: 'About us',
-            ref: '/'
+            ref: '/contact'
         },
         {
             text: 'Contact us',
-            ref: '/'
+            ref: '/contact'
         }
     ]
 }
@@ -78,24 +62,60 @@ const navObj = {
 const genLists = (obj) => {
     return (
         <li key={obj.text}>
-            <a href='#go'>
+            <a href={obj.ref}>
                 {obj.icon ? obj.icon : ''}
                 <p>{obj.text}</p>
             </a>
         </li>
     )
 }
+
+
+const GenListsMain = ({obj}) => {
+    const navigate = useNavigate()
+
+
+    if(obj.query) {
+        console.log(obj.query);
+        return(
+            <li key={obj.text} onClick={()=>{
+              return  navigate('/properties',{
+                    state : obj.query
+                  })
+            }}>
+        
+            <a href='#!'>
+                {obj.icon ? obj.icon : ''}
+                <p>{obj.text}</p>
+            </a>
+        </li>
+        )
+    }
+
+    return (
+        <li key={obj.text}>
+        
+            <Link to={obj.ref}>
+                {obj.icon ? obj.icon : ''}
+                <p>{obj.text}</p>
+            </Link>
+        </li>
+    )
+}
+
+
+
 const MobGenLists = ({ obj, i }) => {
     const [openAccordion, setOpenAccordion] = React.useState(obj.isOpen)
     if (obj.toggle) {
         return (
             <li onClick={()=>setOpenAccordion(!openAccordion)}>
-                <a href='#go'>
+                <h3 href='#go'>
                     <p>{obj.text}</p>
                     {
                         openAccordion ?  <VscChevronUp/>:<VscChevronDown/> 
                     }
-                </a>
+                </h3>
                 {
                     openAccordion? 
                     <div>
@@ -120,5 +140,6 @@ const MobGenLists = ({ obj, i }) => {
 export {
     navObj,
     genLists,
+    GenListsMain,
     MobGenLists
 }
