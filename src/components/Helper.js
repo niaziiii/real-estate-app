@@ -50,5 +50,8 @@ const postItems = async (str,dataObj) => {
 export {
   getItems,
   genLink,
+<<<<<<< HEAD
   postItems
+=======
+>>>>>>> 1c341a38721747f5665b02e339d5659b21acd2c0
 }
