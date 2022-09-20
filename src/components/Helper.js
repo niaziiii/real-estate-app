@@ -32,7 +32,23 @@ const getItems = async (str) => {
   }
 }
 
+const postItems = async (str,dataObj) => {
+  try {
+    const data = await axios({
+      method: 'POST',
+      url: str,
+      data : dataObj
+    })
+
+    if (!data.status === 201) throw new Error(data);
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
 export {
   getItems,
   genLink,
+  postItems
 }
