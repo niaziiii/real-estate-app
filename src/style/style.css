@@ -16,8 +16,8 @@ body {
 }
 
 .slide-bottom {
-  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: slide-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 /* ----------------------------------------------
@@ -161,11 +161,11 @@ body {
 }
 @media screen and (max-width: 950px) {
   .Carousel-Home__container__carousel {
-    height: 75vh;
+    height: 70vh;
   }
   .carouselBox img {
-    max-height: 75vh;
-    min-height: 75vh;
+    max-height: 70vh;
+    min-height: 70vh;
   }
   .carouselBox__content h1 {
     font-size: 30px;
@@ -218,7 +218,8 @@ body {
 .Navigation__container {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 100% !important;
+  overflow: hidden;
 }
 .Navigation__logo {
   margin: 0rem 4rem 0 0;
@@ -229,34 +230,41 @@ body {
   font-size: 2.25rem;
 }
 .Navigation__content {
-  flex: 1;
-  margin: auto;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: flex-end;
+  margin-left: auto;
+  width: auto;
 }
 .Navigation__content ul {
-  width: 90%;
-  margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 .Navigation__content ul li {
+  cursor: pointer;
   list-style: none;
+  margin-right: 2rem;
 }
-.Navigation__content ul li a {
+.Navigation__content ul li a, .Navigation__content ul li h3 {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   color: white;
   text-decoration: none;
   font-size: 1rem;
+  line-height: 1.2rem;
 }
-.Navigation__content ul li a svg {
+.Navigation__content ul li a svg, .Navigation__content ul li h3 svg {
   font-size: 1.5rem;
   margin-right: 0.3rem;
+}
+.Navigation__content ul li h3 {
+  font-weight: 400;
+  font-size: 1.35rem;
+  font-weight: 400;
 }
 
 .Special-navbar {
@@ -265,18 +273,26 @@ body {
 }
 .Special-navbar li a {
   font-size: 1.5rem !important;
-  text-transform: capitalize !important;
-  padding: 0 0.5rem;
+  width: 100%;
+  height: 2rem;
+  align-items: flex-start !important;
 }
 .Special-navbar li a p {
-  text-transform: uppercase !important;
-  font-weight: 700;
+  display: flex !important;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-transform: capitalize !important;
+  font-weight: 500;
+  display: inline-block;
   transition: 0.3s all ease-in;
+}
+.Special-navbar li a p:hover {
+  border-bottom: 3px solid white;
 }
 
 .hamBurgerToggle {
   display: none;
-  margin-left: 2rem;
   border: none;
   padding: 0%;
   outline: none;
@@ -323,8 +339,10 @@ body {
 .mobile-nav ul li {
   width: 60%;
   margin-bottom: 2rem;
+  color: white;
 }
-.mobile-nav ul li a {
+.mobile-nav ul li a,
+.mobile-nav ul li h3 {
   font-weight: 800;
   display: flex;
   flex-direction: row;
@@ -363,6 +381,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   background-color: white;
 }
 .fixedSearchContainer button {
@@ -381,21 +400,64 @@ body {
 .fixedSearchContainer .app__Serach__container {
   background-color: white;
   min-height: 25vh;
+  width: auto;
 }
 .fixedSearchContainer .app__Serach__container form {
   flex-direction: column;
+  box-shadow: 0 0 4px #093679;
+  padding: 2rem 5rem;
+  border-radius: 10px;
 }
-.fixedSearchContainer .app__Serach__container form select {
-  margin-right: 0%;
+.fixedSearchContainer .app__Serach__container form h3 {
+  display: block;
+  text-align: center;
   margin-bottom: 1rem;
-  width: 25rem;
+  text-transform: capitalize;
+}
+.fixedSearchContainer .app__Serach__container form input,
+.fixedSearchContainer .app__Serach__container form select {
+  display: block;
+  margin-bottom: 0.9rem;
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  border-radius: 5px;
+  background-color: #093679;
+  color: grey;
+  width: 15rem;
+}
+.fixedSearchContainer .app__Serach__container form input::placeholder, .fixedSearchContainer .app__Serach__container form input::-webkit-calendar-picker-indicator,
+.fixedSearchContainer .app__Serach__container form select::placeholder,
+.fixedSearchContainer .app__Serach__container form select::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  color: grey;
+}
+.fixedSearchContainer .app__Serach__container form input:active, .fixedSearchContainer .app__Serach__container form input:visited, .fixedSearchContainer .app__Serach__container form input:focus,
+.fixedSearchContainer .app__Serach__container form select:active,
+.fixedSearchContainer .app__Serach__container form select:visited,
+.fixedSearchContainer .app__Serach__container form select:focus {
+  border-color: #1480bd;
+  outline-color: #1480bd;
+  background-color: #1480bd;
+  color: whitesmoke;
+}
+.fixedSearchContainer .app__Serach__container form input[type=submit] {
+  background-color: black;
+  padding: 0.2rem;
+  text-align: center;
+  font-weight: 800;
+  border-radius: 0%;
+  width: 60%;
+  margin: auto;
 }
 
 @media screen and (max-width: 1200px) {
   .Navigation__content ul {
     width: 100% !important;
   }
-  .Special-navbar li a {
+  .Navigation__content ul li {
+    margin-right: 1rem;
+  }
+  .Special-navbar li a, .Special-navbar li h3 {
     font-size: 1.2rem !important;
   }
 }
@@ -411,13 +473,12 @@ body {
   .hamBurgerToggle {
     display: inline;
   }
-  .main-nav-row li {
-    margin-left: 2rem;
-  }
-  .main-nav-row li a p {
+  .main-nav-row li a p,
+.main-nav-row li span p {
     display: none;
   }
-  .main-nav-row li a svg {
+  .main-nav-row li a svg,
+.main-nav-row li span svg {
     font-size: 1.75rem !important;
   }
   .Special-navbar {
@@ -433,6 +494,9 @@ body {
   }
 }
 @media screen and (max-width: 650px) {
+  .fixedSearchContainer .app__Serach__container form {
+    padding: 0.5rem 1rem;
+  }
   .fixedSearchContainer .app__Serach__container form select {
     width: 15rem;
   }
@@ -462,18 +526,21 @@ body {
 .app__Serach__container {
   display: flex;
   justify-content: center;
+  width: 80%;
 }
 .app__Serach__container form {
+  width: 100%;
   padding: 0 2rem;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
 }
+.app__Serach__container form h3 {
+  display: none;
+}
 .app__Serach__container form select {
-  background-color: white;
-  width: 7rem;
+  flex: 1;
   padding: 0.5rem 0;
   margin-right: 1rem;
   margin-bottom: 0.5rem;
@@ -487,6 +554,10 @@ body {
   border: 1px solid gray;
 }
 .app__Serach__container form input[type=submit] {
+  display: block;
+  width: 100%;
+  min-width: 5rem;
+  flex: 1;
   border-radius: 10px;
   background-color: #1480bd;
   border: none;
@@ -499,50 +570,82 @@ body {
 
 @media screen and (max-width: 950px) {
   .app__Search {
-    height: 25vh;
+    height: 30vh;
+  }
+  .app__Serach__container {
+    width: 100%;
   }
   .app__Serach__container form {
     padding: 0 0.5rem;
   }
   .app__Serach__container form select {
+    flex: none;
+    display: block;
     background-color: white;
-    width: 6rem;
     padding: 0.3rem 0;
   }
 }
 .app__Product {
-  margin: 2rem;
+  margin: 1rem 0;
   background-color: #ececec;
   display: flex;
   justify-content: center;
   width: 20rem;
   min-width: 20rem;
   transition: 3s all cubic-bezier(0.42, 0, 1, -0.51);
-  margin-left: 2rem !important;
+  cursor: pointer;
+  box-shadow: 0 0 2px black;
+  border-radius: 10px;
 }
 .app__Product__container {
   text-decoration: none;
   color: black;
   padding: 1rem;
+  overflow: hidden;
+  transition: 0.3s all cubic-bezier(0.42, 0, 1, -0.51);
 }
 .app__Product__container:hover .app__Product__container__img img {
-  opacity: 0.5;
+  opacity: 0.7;
+  scale: 1.2;
 }
 .app__Product__container:hover .app__Product__container__img p {
   display: inline;
+  opacity: 1;
+}
+.app__Product__container__head {
+  display: block;
+  top: 2%;
+  left: 2%;
+  position: absolute;
+}
+.app__Product__container__head span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.app__Product__container__head span b {
+  color: #093679;
+  text-transform: capitalize;
+  padding: 0.5rem 0.5rem;
+  background-color: white;
+}
+.app__Product__container__head span b:nth-of-type(2) {
+  background-color: #1480bd;
+  padding: 0.5rem 1rem;
 }
 .app__Product__container__img {
   position: relative;
   height: 12rem;
   background-color: black;
+  overflow: hidden;
 }
 .app__Product__container__img img {
   width: 100%;
   height: 100%;
-  transition: 0.1s all cubic-bezier(0.42, 0, 1, -0.51);
+  transition: 0.4s all cubic-bezier(0.42, 0, 1, -0.51);
 }
 .app__Product__container__img p {
-  transition: 0.8s all cubic-bezier(0.42, 0, 1, -0.51);
+  opacity: 0;
   position: absolute;
   top: 0%;
   left: 25%;
@@ -559,15 +662,18 @@ body {
   font-weight: 500;
   font-size: 1.3rem;
   white-space: normal;
+  margin-top: 0.5rem;
+  color: #093679;
 }
 .app__Product__container__content__text span {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   display: flex;
   align-items: center;
   white-space: normal;
 }
 .app__Product__container__content__text p b {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
   white-space: normal;
 }
 .app__Product__container__content__location {
@@ -596,6 +702,10 @@ body {
   font-size: 1.75rem;
   color: #1480bd;
   margin-right: 0.5rem;
+}
+.app__Product__container__content__icons__icon b {
+  font-weight: 100;
+  font-size: 0.75rem;
 }
 .app__Product__container__content__icons__icon:nth-of-type(2) {
   border-left: 1px solid gray;
@@ -634,6 +744,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 .Filter-Product__container__products {
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -741,7 +852,7 @@ a {
   color: white;
 }
 .app__productOverview__content__left__heading__types h3:nth-of-type(3) {
-  background-color: rgb(50, 2, 128);
+  background-color: #093679;
 }
 .app__productOverview__content__left__heading h2 {
   margin: 1rem 0;
@@ -754,7 +865,7 @@ a {
 .app__productOverview__content__left__heading span svg {
   font-size: 1.55rem;
   margin-right: 0.9rem;
-  color: rgb(50, 2, 128);
+  color: #093679;
 }
 .app__productOverview__content__left__heading .description {
   font-size: 1.14rem;
@@ -809,7 +920,7 @@ a {
   background-color: rgb(82, 224, 82);
 }
 .app__productOverview__content__right__agent div span {
-  background-color: rgb(50, 2, 128);
+  background-color: #093679;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -975,5 +1086,63 @@ a {
   .app__productOverview__content__right__agent {
     width: 100%;
     min-width: 100%;
+  }
+}
+.contactUs__form {
+  box-shadow: 0 0 4px #093679;
+  padding: 2rem 5rem;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
+.contactUs input, .contactUs select {
+  display: block;
+  margin-bottom: 0.9rem;
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  border-radius: 5px;
+  background-color: #093679;
+  color: grey;
+  width: 15rem;
+}
+.contactUs input::placeholder, .contactUs input::-webkit-calendar-picker-indicator, .contactUs select::placeholder, .contactUs select::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  color: grey;
+}
+.contactUs input:active, .contactUs input:visited, .contactUs input:focus, .contactUs select:active, .contactUs select:visited, .contactUs select:focus {
+  border-color: #1480bd;
+  outline-color: #1480bd;
+  background-color: #1480bd;
+  color: whitesmoke;
+}
+.contactUs h2 {
+  margin-bottom: 1rem;
+  font-weight: 900;
+}
+.contactUs input[type=submit] {
+  background-color: black;
+  padding: 0.2rem;
+  text-align: center;
+  font-weight: 800;
+  border-radius: 0%;
+  width: 60%;
+  margin: auto;
+}
+
+.aboutus {
+  width: 100%;
+  overflow: hidden;
+}
+.aboutus__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+@media screen and (max-width: 450px) {
+  .contactUs__form {
+    padding: 0.5rem 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
