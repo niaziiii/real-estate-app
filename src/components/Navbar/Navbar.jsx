@@ -23,7 +23,9 @@ function Navbar() {
             <div className="Navigation__content">
 
                 <ul className='main-nav-row'>
+
                     {navObj.main.map((el, i) => genLists(el))}
+                    
                     <li onClick={() =>  setShowContact(true) }>
                         <span className='searchmain'>
                             <GoChecklist />
