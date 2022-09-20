@@ -2,10 +2,11 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Footer, Filter, HeaderImage, SearchProduct, Pagination } from '../../components';
+import { Footer, Filter, HeaderImage, SearchProduct, Pagination,LoadingAnimation } from '../../components';
 import { getItems } from '../../components/Helper';
 
 function SearchPageProduct() {
+  const [loadingAnimation, setLoadingAnimation] = React.useState(true)
   const [properties, setProperties] = useState([]);
   const [propertiesPerPage] = useState(4);
   const [currentPage, setCurrentPage] = useState(1)
@@ -16,6 +17,7 @@ function SearchPageProduct() {
   useEffect(() => {
     async function getProperties() {
       const data = await getItems(`http://127.0.0.1:4000/api/v1?${ref.state}`);
+      if (data.status === 'success') setTimeout(setLoadingAnimation(false), 1000); 
       setProperties(data.data)
     }
 
@@ -30,6 +32,8 @@ function SearchPageProduct() {
   const paginate = (pageNumber) => { setCurrentPage(pageNumber) }
   return (
     <div className='Search-Product-Page'>
+      {loadingAnimation ? <LoadingAnimation /> : ''}
+
       <HeaderImage />
       <SearchProduct />
       <h1 style={{ width: '100%', textAlign: 'center', textTransform: 'capitalize', padding: '2rem 0 0 0' }}>Total result {properties.length}</h1>

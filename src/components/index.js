@@ -4,11 +4,13 @@ import Filter from "./Filter/Filter";
 import Footer from "./Footer/Footer";
 import HeaderImage from "./HeaderImage/HeaderImage";
 import HomePageProducts from "./HomePageProducts/HomePageProducts";
+import LoadingAnimation from "./LoadingAnimation/LoadingAnimation";
 import Navbar from "./Navbar/Navbar";
 import Overview from "./Overview/Overview.jsx";
 import Pagination from "./Pagination/Pagination";
 import Product from "./Product/Product";
 import SearchProduct from "./SearchProduct/SearchProduct";
+
 export {
     Carousel,
     Navbar,
@@ -20,6 +22,7 @@ export {
     Filter,
     HeaderImage,
     Pagination,
-    ContactUs
+    ContactUs,
+    LoadingAnimation,
 
 }
