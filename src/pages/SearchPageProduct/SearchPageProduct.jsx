@@ -20,7 +20,6 @@ function SearchPageProduct() {
     }
 
     getProperties();
-    console.log(ref.state);
   }, [ref.state])
 
 
