@@ -1,4 +1,5 @@
 import Carousel from "./Carousel/Carousel";
+import ContactUs from "./ContactUs/ContactUs";
 import Filter from "./Filter/Filter";
 import Footer from "./Footer/Footer";
 import HeaderImage from "./HeaderImage/HeaderImage";
@@ -18,6 +19,7 @@ export {
     Overview,
     Filter,
     HeaderImage,
-    Pagination
+    Pagination,
+    ContactUs
 
 }
