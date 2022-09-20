@@ -22,7 +22,11 @@ export {
     Filter,
     HeaderImage,
     Pagination,
+<<<<<<< HEAD
     ContactUs,
     LoadingAnimation,
+=======
+    ContactUs
+>>>>>>> 1c341a38721747f5665b02e339d5659b21acd2c0
 
 }
