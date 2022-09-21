@@ -25,8 +25,7 @@ const handleSubmitEndPoint = async (obj) => {
   }
 
 }
-function ContactUs() {
-
+function ContactUs(props) {
   const formik = Formik({
     initialValues: {
       name: '',
@@ -35,10 +34,12 @@ function ContactUs() {
       phoneNumber: '',
       duration: '',
       vistingDate: '',
+      
     },
     validationSchema: yup.object(validation),
     onSubmit: async (value) => {
-      await handleSubmitEndPoint(value)
+      await handleSubmitEndPoint({...value, property :props.id})
+      if(props.closeBtn) props.closeBtn()
     }
   })
   const formData = formik.props.value;
@@ -62,6 +63,7 @@ function ContactUs() {
           <option value="Afternon">Afternoon</option>
           <option value="Evening">Evening</option>
         </select>
+        <input type="submit" />
         </form>
         </div>
 

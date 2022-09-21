@@ -4,11 +4,17 @@ import {
     OverviewAgent, OverViewAmenities
 } from './overviewModule';
 import Product from '../Product/Product'
+import ContactUs from '../ContactUs/ContactUs';
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 
 function Overview(props) {
+    const [showContact,setShowContact] = React.useState(false)
+
     const data = props.property.result;
     const others = props.property.others;
+
+    const closeBtn= ()=> setShowContact(false);
 
     return (
         <div className='app__productOverview' >
@@ -24,7 +30,7 @@ function Overview(props) {
                     {data.amenities ? <OverViewAmenities data={data.amenities} /> : ''}
 
                     <div className="app__productOverview__content__right__button">
-                        <button>Book a viewing</button>
+                        <button onClick={()=> setShowContact(true)}>Book a viewing</button>
                         <button>view brochure</button>
                     </div>
 
@@ -39,6 +45,13 @@ function Overview(props) {
                 })}
             </div>
 
+
+            {showContact ?
+                    <div className='fixedSearchContainer '>
+                        <button onClick={() => setShowContact(false)}><IoMdCloseCircleOutline /></button>
+                        <ContactUs id={props.property.result._id} closeBtn = {closeBtn}/>
+                    </div>
+                    : ''}
 
         </div>
     )

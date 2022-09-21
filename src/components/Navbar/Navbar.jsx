@@ -14,7 +14,7 @@ function Navbar() {
     const [showContact, setShowContact] = React.useState(false)
 
 
-    const setCloseForm = ()=> setShowContact;
+    const closeBtn= ()=> setShowContact(false);
     return (
         <div className='Navigation__container'>
             <div className="Navigation__logo">
@@ -71,7 +71,7 @@ function Navbar() {
                 {showContact ?
                     <div className='fixedSearchContainer '>
                         <button onClick={() => setShowContact(false)}><IoMdCloseCircleOutline /></button>
-                        <ContactUs submited={setCloseForm}/>
+                        <ContactUs closeBtn={closeBtn}/>
                     </div>
                     : ''}
             </div>
