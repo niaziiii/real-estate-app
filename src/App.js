@@ -1,9 +1,6 @@
-import {Home,ProductOverviewPage,SearchPageProduct,About} from "./pages/index";
+import {Home,ProductOverviewPage,SearchPageProduct,About, Error} from "./pages/index";
 import './style/style.css'
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
+import {Routes,Route} from "react-router-dom";
 import Navigation from "./pages/Navigation/Navigation";
 
 
@@ -16,7 +13,7 @@ function App() {
       <Route path="/property/:productId" element={<ProductOverviewPage/>}> </Route>
       <Route path="/properties" element={<SearchPageProduct/>}> </Route>
       <Route path="/contact" element={<About/>}> </Route>
-
+      <Route path="*" element={<Error/>}> </Route>
     </Routes>
       
     </div>
