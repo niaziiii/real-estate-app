@@ -19,3 +19,22 @@ body{
 @import './modules/contactUs';
 
 
+.Error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    &__container{
+        text-align: center;
+        h1{margin-bottom: 2rem;}
+        a{
+            background-color: $color-blue;
+            // margin-top: 1rem;
+            padding: .5rem 1rem;
+            border-radius: 5px;
+            color: white;
+            font-weight: 700;
+
+        }
+    }
+}
