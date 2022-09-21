@@ -10,7 +10,7 @@ function Home() {
 
   useEffect(() => {
     async function getProperties() {
-      const data = await getItems('http://127.0.0.1:4000/api/v1')
+      const data = await getItems('https://real-estate-mk.herokuapp.com/api/v1')
       if (data.status === 'success') setTimeout(setLoadingAnimation(false), 1000);
       setProperty(data.data)
     }

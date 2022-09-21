@@ -16,7 +16,7 @@ function SearchPageProduct() {
 
   useEffect(() => {
     async function getProperties() {
-      const data = await getItems(`http://127.0.0.1:4000/api/v1?${ref.state}`);
+      const data = await getItems(`https://real-estate-mk.herokuapp.com/api/v1?${ref.state}`);
       if (data.status === 'success') setTimeout(setLoadingAnimation(false), 1000); 
       setProperties(data.data)
     }

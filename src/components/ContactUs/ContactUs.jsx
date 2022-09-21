@@ -15,7 +15,7 @@ const validation = {
 
 const handleSubmitEndPoint = async (obj) => {
   try {
-    const posted = await postItems('http://127.0.0.1:4000/api/v1/visit', obj)
+    const posted = await postItems('https://real-estate-mk.herokuapp.com/api/v1/visit', obj)
     const { name } = posted.data.data
     alert(`Dear ${name} your request just submited. We will contact you very soon..`)
 

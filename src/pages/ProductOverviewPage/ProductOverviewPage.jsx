@@ -13,14 +13,14 @@ function ProductOverviewPage() {
   useEffect(() => {
     async function getProperties() {
       try {
-        const data = await getItems(`http://127.0.0.1:4000/api/v1/${productId}`)
+        const data = await getItems(`https://real-estate-mk.herokuapp.com/api/v1/${productId}`)
         if (data) {
           setTimeout(setLoadingAnimation(false), 1000);
           setProperty(data.data)
           setOthers(null)
         }
       } catch (error) {
-        getItems(`http://127.0.0.1:4000/api/v1?limit=3`).then((data) => {
+        getItems(`https://real-estate-mk.herokuapp.com/api/v1?limit=3`).then((data) => {
           setOthers(data.data)
           setLoadingAnimation(false)
           setProperty(null)
