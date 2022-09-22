@@ -1164,4 +1164,23 @@ a {
   border-radius: 5px;
   color: white;
   font-weight: 700;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1480bd;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #093679;
 }/*# sourceMappingURL=style.css.map */
