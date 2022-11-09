@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import {useNavigate} from 'react-router-dom'
 
 const buttonStyle = {
-  background : '#1480bd',
+  background : '#aa9985',
   padding : '.5rem 1.2rem',
   border : 'none',
   outline : 'none',
@@ -48,7 +48,7 @@ function HomePageProducts({arr,title,refLink}) {
     <div className='app__Home-product-slider'>
       {dataArr? 
     <>
-        <h2>{title}</h2>
+        <h2 style={{color:'#aa9985', marginBottom:'1rem'}}>{title}</h2>
       <Slider {...settings}>
         {dataArr.map((el, i) => <div className='Product-Container' key={i}><Product data ={el}/></div>)}
       </Slider>

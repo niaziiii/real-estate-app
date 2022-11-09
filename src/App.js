@@ -1,5 +1,5 @@
 import {Home,ProductOverviewPage,SearchPageProduct,About, Error} from "./pages/index";
-import './style/style.css'
+import "./style/style.scss";
 import {Routes,Route} from "react-router-dom";
 import Navigation from "./pages/Navigation/Navigation";
 

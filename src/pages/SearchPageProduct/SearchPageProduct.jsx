@@ -36,7 +36,7 @@ function SearchPageProduct() {
 
       <HeaderImage />
       <SearchProduct />
-      <h1 style={{ width: '100%', textAlign: 'center', textTransform: 'capitalize', padding: '2rem 0 0 0' }}>Total result {properties.length}</h1>
+      <h1 style={{ color:'#aa9985', width: '100%', textAlign: 'center', textTransform: 'capitalize', padding: '2rem 0 0 0' }}>Total result {properties.length}</h1>
       {properties ? <Filter data={dataObj} /> : ''}
 
       {properties.length ?

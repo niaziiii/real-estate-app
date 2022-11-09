@@ -46,7 +46,7 @@
 
         a {
             text-decoration: none;
-            background-color: $color-blue;
+            background-color: $color-main;
             border: none;
             outline: none;
             font-weight: 600;
@@ -68,15 +68,14 @@
 .slick-prev {
     top: 60%;
     z-index: 100;
-    border: 2px solid white;
+    border: 2px solid $color-lite;
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
-    transition: .4s all ease-in;
+    transition: .1s all ease-in;
 
-    &:hover {
-        background: black;
-        border-color: black;
+    &:active {
+        background: $color-main;
         opacity: .5;
 
     }
@@ -92,7 +91,7 @@
 .slick-next:before {
     font-size: 30px;
     filter: drop-shadow(0px 0px 10px white);
-    color: black;
+    color: $color-main;
 }
 
 

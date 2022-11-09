@@ -1,7 +1,8 @@
 .contactUs{
     &__form{
         // background-color: red;
-        box-shadow:  0 0 4px $colr-dark-blue;
+        box-shadow:  0 0 4px $color-secondary;
+        background-color: $color-main;
         padding: 2rem 5rem; 
         border-radius: 10px;
         width: 100%;
@@ -15,28 +16,30 @@
         padding: .5rem ;
         margin-top: .2rem;
         border-radius: 5px;
-        background-color: $colr-dark-blue;
-        color: grey;
+        background-color: transparent;
+        color: $color-lite;
         width: 15rem;
+        border: none;
+        outline: none;
+        border: 1px solid $color-dark;
         &::placeholder,&::-webkit-calendar-picker-indicator {
-            filter: invert(1); 
-            color: grey;
-          }
+            color: $color-lite;
+        }
 
         &:active,&:visited,&:focus{
-            border-color: $color-blue;
-            outline-color: $color-blue;
-            background-color: $color-blue;
-            color: whitesmoke;
+            border-color: $color-dark;
+            outline-color: $color-dark;
+            background-color: $color-secondary;
 
         }
     }
     h2{
         margin-bottom: 1rem;
         font-weight: 900;
+        color: $color-lite;
     }
     input[type='submit']{
-        background-color: black;
+        background-color: $color-secondary;
         padding: .2rem ;
         text-align: center;
         font-weight: 800;

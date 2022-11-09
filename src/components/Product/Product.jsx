@@ -26,7 +26,7 @@ function Product(prop) {
     </div>
     <div className="app__Product__container__content">
        <div className="app__Product__container__content__text">
-       <h2>{data.nameProperty}</h2>
+       <h2>{data.nameProperty.slice(0,30)}</h2>
         <span className='app__Product__container__content__location'> {<FaLocationArrow/>}{data.location}</span>
         <p><b>AED {data.price}</b></p>
        </div>

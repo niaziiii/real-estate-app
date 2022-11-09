@@ -4,9 +4,7 @@ import "./footer.css";
 function Footer() {
   return (
     <>
-    <div className="footer-image">
-      <img src="https://skylandrealty.com/wp-content/themes/skyland/assets/images/footer-bg.png" alt="" />
-    </div>
+ 
     <div className="gpt3__footer section__padding">
   
       <div className="gpt3__footer__button">

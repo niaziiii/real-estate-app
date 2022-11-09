@@ -1,5 +1,5 @@
 .app__Search{
-    background-color: $color-grey;
+    background-color: $color-lite;
     min-height: 15vh;
     display: flex;
     align-items: center;
@@ -19,6 +19,8 @@
             align-items: center;
             h3{display: none;}
             select{
+                background-color: transparent;
+                color: $color-secondary;
                 flex:  1;
                 padding: .5rem 0;
                 margin-right:  1rem;
@@ -26,9 +28,7 @@
                 border: 1px solid gray;
                 border-radius: 10px;
                 option{padding: .3rem .8rem; }
-                &:hover,:visited,:focus {
-                border: 1px solid gray;
-                }
+                
             }
             input[type='submit']{
                 display: block;
@@ -36,7 +36,7 @@
                 min-width:5rem;
                 flex: 1;
                 border-radius: 10px;
-                background-color: $color-blue;
+                background-color: $color-main;
                 border: none;
                 outline: none;
                 padding: .5rem 1.4rem;
@@ -60,7 +60,6 @@
             select{
                 flex: none;
                 display: block;
-                background-color: white;
                 padding: .3rem 0;
             }
         }

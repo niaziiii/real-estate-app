@@ -23,10 +23,11 @@ function Carousel({data}) {
   const callBackFUnction = entires =>{
       const [entry] = entires
       if(entry.isIntersecting){
-        navEl.current[0].style.background = 'transparent'
+        navEl.current[0].classList.remove('active-header')
       }
       else{
-        navEl.current[0].style.background = '#1480bd'
+        navEl.current[0].classList.add('active-header')
+
       }
   }
 

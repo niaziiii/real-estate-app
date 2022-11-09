@@ -18,7 +18,7 @@ function Navbar() {
     return (
         <div className='Navigation__container'>
             <div className="Navigation__logo">
-                <Link to='/'><h1 style={{ color: 'white' }}>Sky Liner</h1></Link>
+                <Link to='/'><h1 style={{ color: 'white' }}>Real-Estate</h1></Link>
             </div>
             <div className="Navigation__content">
 

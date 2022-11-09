@@ -1,9 +1,8 @@
 :root {
-    --main-color: #ecf0f1;
-    --point-color: #1480bd;
+    --main-color: #e0dfda;
+    --point-color: #aa9985;
     --size: 5px;
   }
-  
   .loader {
     background-color: var(--main-color);
     overflow: hidden;
